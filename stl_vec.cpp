@@ -39,5 +39,11 @@ int main(){
             it=vec.begin();
         }
     }
+    std::vector<int>::const_iterator cit = vec.cbegin()+2;//이렇게 선언하면 그냥 참조용으로만 사용하는것, *cit=2000처럼 값을 바꿀수없음
 
+    std::vector<int>::reverse_iterator rit=vec.rbegin();//이러면 맨 뒤에꺼임. rend()하면 맨앞 원소의 한칸 앞을 가리킨.rit도 그냥 ++하면 됨.거꾸로 알아서 감
+    //it--같은 코드가 안되고 reverse를 하는 이유:
+        // vector 의 index 를 담당하는 타입이 부호 없는 정수 이기 때문입니다. 
+        // 따라서 i 가 0 일 때 i -- 를 하게 된다면 -1 이 되는 것이 아니라, 해당 타입에서 가장 큰 정수가 되버리게 됩니다.
+        // 따라서 for 문이 영원히 종료할 수 없게 되죠.
 }
