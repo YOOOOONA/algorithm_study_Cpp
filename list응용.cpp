@@ -31,7 +31,7 @@ int main(){
     for(std::list<int>::iterator it=li.begin();it!=li.end();it++){
         if(*it==30){
             li.erase(it);
-            break;
+            break;//리스트는 벡터와 다르게 지워도 반복자가 무효화 되지 않음.왜냐면 각 원소들의 주소값은 변하지 않기 때문!
         }
     }
     std::cout<<"if 30,erase"<<std::endl;
